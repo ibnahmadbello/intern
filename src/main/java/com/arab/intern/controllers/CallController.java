@@ -1,19 +1,26 @@
 package com.arab.intern.controllers;
 
-import org.springframework.stereotype.Controller;
+import java.util.HashMap;
+
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class CallController {
 
 	@GetMapping(value = "/getData")
-	public void getData() {}
+	public ResponseEntity<?> getData(@RequestParam String email, 
+			@RequestParam String password) {
+		return ResponseEntity.ok(new HashMap<>());
+	}
 	
 	@PostMapping(value = "/postData")
-	public String postData() {
-		return "Post Data";
+	public ResponseEntity<?> postData(@RequestParam String email, 
+			@RequestParam String password) {
+		return ResponseEntity.ok(new HashMap<>());
 	}
 	
 }
